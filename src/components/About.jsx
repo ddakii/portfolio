@@ -4,7 +4,7 @@ import mobile from "../assets/mobileR.png";
 
 const About = () => {
   return (
-    <div className='text-white gap-4 max-w-[1200px] mx-auto my-12 grid sm:grid-cols-3' id="about">
+    <div className='text-white gap-4 max-w-[1200px] mx-auto my-14 grid sm:grid-cols-3' id="about">
       <div className='sm:col-span-2 glass sm:py-16 my-auto text-left p-4'>
         <div className='max-w-[80%] mx-auto'>
           <h2 className='text-3xl font-bold mb-4 '>I can create your Website</h2>

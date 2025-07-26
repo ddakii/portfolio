@@ -3,13 +3,14 @@ import daki1 from "../assets/daki1.png";
 import daki2 from "../assets/daki2.png";
 import daki3 from "../assets/daki3.png";
 import daki4 from "../assets/ws.png";
+import proj1 from "../assets/lk.mp4";
 import proj2 from '../assets/HOMMEVIDMP.mp4'; // Correctly importing the MP4 video
 import proj3 from "../assets/vidvite.mp4";
 import proj4 from "../assets/wcv.mp4";
 
 
 const projects = [
-  { id: 1, img: daki1, title: 'Project 1', liveUrl: 'http://lf-collection.com/' },
+  { id: 1, img: daki1, title: 'Project 1', liveUrl: '/', videoUrl: proj1 },
   { id: 2, img: daki2, title: 'Project 2', liveUrl: '/', videoUrl: proj2 }, // Added videoUrl reference
   { id: 3, img: daki3, title: 'Project 3', liveUrl: '/', videoUrl: proj3 },
   { id: 4, img: daki4, title: 'Project 4', liveUrl: '/', videoUrl: proj4 },

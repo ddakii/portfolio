@@ -42,7 +42,7 @@ const Hero = () => {
 
 
       <div className="absolute bottom-40 right-0 w-[250px] lg:w-[400px] z-[-1]">
-       <img className="w-[300px]" src={heroImage} alt=''/>
+       <img className="w-[300px] hidden md:block" src={heroImage} alt=''/>
       </div>
     </div>
   )
