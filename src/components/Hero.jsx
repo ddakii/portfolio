@@ -36,13 +36,15 @@ const Hero = () => {
         </div>
       </div>
 
-      <figure className="w-full min-w-0 max-w-[240px] overflow-hidden md:max-w-[220px] md:justify-self-end">
-        <img
-          src="/portrait.png"
-          alt="Daut Vuniqi wearing a graduation cap and glasses"
-          className="block aspect-[4/5] w-full max-w-full object-cover object-top grayscale"
-        />
-        <figcaption className="mt-3 flex items-center justify-between text-xs uppercase tracking-[0.18em] text-muted">
+      <figure className="relative w-full min-w-0 max-w-[280px] md:max-w-xs md:justify-self-end">
+        <div className="overflow-hidden rounded-2xl bg-ink/5 p-3 shadow-lg shadow-ink/10">
+          <img
+            src="/portrait.png"
+            alt="Daut Vuniqi wearing a graduation cap and glasses"
+            className="block aspect-[4/5] w-full rounded-xl object-cover object-top grayscale transition-all duration-300 hover:grayscale-0"
+          />
+        </div>
+        <figcaption className="mt-4 flex items-center justify-between text-xs uppercase tracking-[0.18em] text-muted">
           <span>Daut Vuniqi</span>
           <span>2026</span>
         </figcaption>

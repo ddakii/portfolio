@@ -22,17 +22,13 @@ const About = () => {
           <h2 className="mt-3 max-w-xl font-serif text-4xl tracking-tight sm:text-5xl md:text-6xl">Building shops that work from day one.</h2>
           <div className="mt-8 max-w-xl space-y-4 text-lg leading-relaxed text-muted">
             <p>
-              The last version of this site called me an 18-year-old frontend developer looking for an
-              internship. The work since then is more specific.
+              Full-stack web developer from Kosovo, focused on building real products for real businesses. I create storefronts with working checkout, admin panels owners can actually use, and internal tools that solve day-to-day problems.
             </p>
             <p>
-              IVA Accessories and Dresses by Florinda are live stores with checkout and a studio for
-              the owner. ACCESSO.KOS is a panel for a bags business. On GitHub there are booking
-              flows, repair-shop tools, and sites written in Albanian and English.
+              My work spans e-commerce, booking systems, restaurant sites, and business management tools — most built in both Albanian and English. Every project ships with the backend, database, and admin side included.
             </p>
             <p>
-              I care about the part after the homepage looks finished: an order that saves, stock that
-              updates, and a person who can change a product without waiting on me.
+              I'm not here to build pretty demos. I build things that take orders, track inventory, and let business owners run their shop without calling a developer.
             </p>
           </div>
         </div>

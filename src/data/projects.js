@@ -32,6 +32,28 @@ export const featured = [
     code: "https://github.com/ddakii/accesso.kos",
     tone: "ink",
   },
+  {
+    id: "endriti",
+    title: "Auto Service Endriti",
+    kind: "Auto service",
+    summary:
+      "Client and API for an auto service business, set up to run as one app.",
+    stack: ["React", "Node", "TypeScript"],
+    live: "https://autoendriti.netlify.app",
+    code: "https://github.com/ddakii/autoendriti",
+    tone: "slate",
+  },
+  {
+    id: "forno",
+    title: "FORNO",
+    kind: "Restaurant",
+    summary:
+      "Informational site for a wood-fired pizza restaurant.",
+    stack: ["React", "Vite", "Tailwind"],
+    live: "https://fornopizzashop.netlify.app",
+    code: "https://github.com/ddakii/pizzashop",
+    tone: "rust",
+  },
 ];
 
 export const moreWork = [
@@ -70,30 +92,12 @@ export const moreWork = [
     code: "https://github.com/ddakii/auto",
   },
   {
-    id: "endriti",
-    title: "Auto Service Endriti",
-    kind: "Auto service",
-    summary: "Client and API for an auto service business, set up to run as one app.",
-    stack: ["React", "Node", "TypeScript"],
-    live: "https://autoendriti.netlify.app",
-    code: "https://github.com/ddakii/autoendriti",
-  },
-  {
     id: "barber",
     title: "Barbershop",
     kind: "Booking + CRM",
     summary: "Public booking site and staff admin. Customers book without an account.",
     stack: ["React", "Express", "Prisma"],
     code: "https://github.com/ddakii/barbershop",
-  },
-  {
-    id: "forno",
-    title: "FORNO",
-    kind: "Restaurant",
-    summary: "Informational site for a wood-fired pizza restaurant.",
-    stack: ["React", "Vite", "Tailwind"],
-    live: "https://fornopizzashop.netlify.app",
-    code: "https://github.com/ddakii/pizzashop",
   },
   {
     id: "lf",
