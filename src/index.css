@@ -1,46 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body{
-  font-family: "Space Grotesk", sans-serif;
-  background-color: black;
-  background-image: radial-gradient(circle at center, rgba(255,255,255,0.005) 0, rgba(255,255,255,0.005) 1px, transparent 1px),
-  linear-gradient(to right, rgba(255,255,255,0.01) 1px, transparent 1px),
-  linear-gradient(to bottom, rgba(255,255,255,0.01) 1px, transparent 1px);
-  background-size: 20px 20px;
-  background-color: #191616;
-}
-.glass{
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border:1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
-.glass-nav{
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-  border-radius: 20px;
-  border:1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+:root {
+  color-scheme: light;
 }
 
-.animate-fade-in {
-  animation: fade-in 0.5s ease forwards;
+html {
+  scroll-behavior: smooth;
 }
 
-.animate-delay {
-  opacity: 0;
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  background: #f3eee6;
+  color: #1c1714;
+  font-family: Outfit, system-ui, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+p {
+  overflow-wrap: break-word;
+}
+
+::selection {
+  background: #7c2f2a;
+  color: #f3eee6;
+}
+
+.tone-olive {
+  background: #3d4a38;
+  color: #f3eee6;
+}
+
+.tone-wine {
+  background: #7c2f2a;
+  color: #f6efe8;
+}
+
+.tone-ink {
+  background: #1c1714;
+  color: #f3eee6;
 }

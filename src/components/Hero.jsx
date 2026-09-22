@@ -1,54 +1,54 @@
-import React from "react";
-import heroImage from "../assets/DV.png";
-import mobileL from "../assets/mobileL.png"; 
-import mobileM from "../assets/mobileM.png";
-import mobileR from "../assets/mobileR.png";
-
-
-import  {TypeAnimation} from 'react-type-animation'
+import { Link } from "react-scroll";
 
 const Hero = () => {
   return (
-    <div className='relative grid sm:grid-cols-3 gap-8 max-w-[1200px] md:h-[70vh] mx-auto py-8 overflow-hidden md:overflow-visible' id="hero">
-      <img className='hidden md:block absolute z-[-1] w-[400px] bottom-0 left-[-170px]' src={mobileL} alt=''/>
-      <img className='absolute z-[-1] w-[400px]  -bottom-[190px] md:bottom-0 md:left-[320px]' src={mobileM} alt=''/>
-      <img className='absolute z-[-1] w-[200px] bottom-[500px] left-[450px]' src={mobileR} alt=''/>
-
-      <div className='glass px-5 col-span-2 px-5 my-auto z-[-1]'>
-        <h1 className='text-white text-4xl sm:text-5xl lg:text-8xl font-extrabold p-4 md:p-0'>
-          <p className="md:mb-4 text-gray-500"> I'm a</p>
-          <TypeAnimation
-            sequence={[
-              "Frontend Developer",
-              1000,
-            
-            ]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-          />
-       
+    <section id="home" className="mx-auto grid w-full min-w-0 max-w-6xl items-end gap-10 px-5 pb-16 pt-12 md:grid-cols-[1.4fr_0.8fr] md:px-8 md:pb-24 md:pt-20">
+      <div className="min-w-0">
+        <p className="mb-6 text-xs uppercase tracking-[0.28em] text-muted">Web developer · 19</p>
+        <h1 className="max-w-full font-serif text-[2.15rem] leading-[0.95] tracking-tight min-[420px]:text-4xl sm:text-6xl md:text-7xl lg:text-8xl">
+          <span className="block">Shops, studios,</span>
+          <span className="block italic text-wine">and the tools</span>
+          <span className="block">that keep them open.</span>
         </h1>
-        <p className="font-bold mb-6 md:mb-0 md:my-6 text-sm sm:text-lg lg:text-xl max-w-[280px] p-4 md:p-0 md:max-w-[600px] ml-1 text-gray-300">
-        Hi! I'm Daut Vuniqi, a 18-year-old web developer with over 3 years of experience in building dynamic,
-         responsive websites. While I haven’t worked professionally yet,
-          I’ve honed my skills through personal projects and a passion for coding. 
-          I specialize in HTML, CSS, JavaScript,WordPress and React.js on the front-end.I’m currently looking 
-          or an internship opportunity where I can contribute my skills while learning from experienced
-           professionals.
-          
+        <p className="mt-8 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+          I’m Daut Vuniqi. I build storefronts people can buy from, and the admin side the owner
+          actually uses — fashion houses, auto shops, and local businesses.
         </p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link
+            to="work"
+            smooth
+            duration={500}
+            offset={-70}
+            className="cursor-pointer rounded-full bg-ink px-5 py-2.5 text-sm text-paper"
+          >
+            See the work
+          </Link>
+          <Link
+            to="contact"
+            smooth
+            duration={500}
+            offset={-70}
+            className="cursor-pointer rounded-full border border-ink px-5 py-2.5 text-sm"
+          >
+            Start a project
+          </Link>
+        </div>
       </div>
 
+      <figure className="w-full min-w-0 max-w-full overflow-hidden md:max-w-sm md:justify-self-end">
+        <img
+          src="/portrait.png"
+          alt="Daut Vuniqi wearing a graduation cap and glasses"
+          className="block aspect-[4/5] w-full max-w-full object-cover object-top grayscale"
+        />
+        <figcaption className="mt-3 flex items-center justify-between text-xs uppercase tracking-[0.18em] text-muted">
+          <span>Daut Vuniqi</span>
+          <span>2026</span>
+        </figcaption>
+      </figure>
+    </section>
+  );
+};
 
-      <div className="absolute bottom-40 right-0 w-[250px] lg:w-[400px] z-[-1]">
-       <img className="w-[300px] hidden md:block" src={heroImage} alt=''/>
-      </div>
-    </div>
-  )
-}
-
-export default Hero
-
-
-
+export default Hero;

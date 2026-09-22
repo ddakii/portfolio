@@ -1,98 +1,93 @@
-import React, { useState, useRef } from 'react'; // Make sure to import useState and useRef
-import daki1 from "../assets/daki1.png";
-import daki2 from "../assets/daki2.png";
-import daki3 from "../assets/daki3.png";
-import daki4 from "../assets/ws.png";
-import proj1 from "../assets/lk.mp4";
-import proj2 from '../assets/HOMMEVIDMP.mp4'; // Correctly importing the MP4 video
-import proj3 from "../assets/vidvite.mp4";
-import proj4 from "../assets/wcv.mp4";
+import { featured, moreWork } from "../data/projects";
 
-
-const projects = [
-  { id: 1, img: daki1, title: 'Project 1', liveUrl: '/', videoUrl: proj1 },
-  { id: 2, img: daki2, title: 'Project 2', liveUrl: '/', videoUrl: proj2 }, // Added videoUrl reference
-  { id: 3, img: daki3, title: 'Project 3', liveUrl: '/', videoUrl: proj3 },
-  { id: 4, img: daki4, title: 'Project 4', liveUrl: '/', videoUrl: proj4 },
- 
-];
-
+const Links = ({ project, light }) => (
+  <div className="mt-6 flex flex-wrap gap-3 text-sm">
+    {project.live && (
+      <a
+        href={project.live}
+        target="_blank"
+        rel="noreferrer"
+        className={`rounded-full px-4 py-2 ${light ? "bg-paper text-ink" : "bg-ink text-paper"}`}
+      >
+        Live site
+      </a>
+    )}
+    <a
+      href={project.code}
+      target="_blank"
+      rel="noreferrer"
+      className={`rounded-full border px-4 py-2 ${light ? "border-paper/40" : "border-line"}`}
+    >
+      GitHub
+    </a>
+  </div>
+);
 
 const Work = () => {
-  const [activeVideo, setActiveVideo] = useState(null);
-  const videoRef = useRef(null);
-
-  const handleLiveClick = (videoUrl) => {
-    setActiveVideo(videoUrl);
-  };
-
-  const handleCloseVideo = () => {
-    setActiveVideo(null);
-    if (videoRef.current) {
-      videoRef.current.pause(); // Pause the video when closed
-    }
-  };
-
   return (
-    <div className='max-w-[1200px] mx-auto grid grid-cols-2 gap-4 glass p-6' id="work">
-      <div className='col-span-2 my-4'>
-        <h1 className='text-4xl mb-4 text-gray-300'>My Work</h1>
+    <section id="work" className="border-t border-line">
+      <div className="mx-auto w-full min-w-0 max-w-6xl px-5 py-16 md:px-8 md:py-24">
+        <div className="mb-10 flex items-end justify-between gap-6">
+          <div>
+            <p className="text-xs uppercase tracking-[0.28em] text-muted">Selected work</p>
+            <h2 className="mt-3 font-serif text-4xl tracking-tight sm:text-5xl md:text-6xl">Live, and on GitHub.</h2>
+          </div>
+          <a
+            href="https://github.com/ddakii"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden text-sm text-muted underline decoration-line underline-offset-4 hover:text-ink sm:inline"
+          >
+            github.com/ddakii
+          </a>
+        </div>
+
+        <div className="grid gap-4 lg:grid-cols-3">
+          {featured.map((project, index) => (
+            <article key={project.id} className={`tone-${project.tone} flex min-h-[420px] min-w-0 flex-col justify-between overflow-hidden rounded-3xl p-6 md:p-7`}>
+              <div>
+                <div className="flex items-center justify-between text-xs uppercase tracking-[0.2em] opacity-70">
+                  <span>0{index + 1}</span>
+                  <span>{project.kind}</span>
+                </div>
+                <h3 className="mt-8 font-serif text-4xl leading-none">{project.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed opacity-90">{project.summary}</p>
+              </div>
+              <div>
+                <p className="mt-6 text-xs uppercase tracking-[0.14em] opacity-80">{project.stack.join(" · ")}</p>
+                <Links project={project} light />
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-16">
+          <h3 className="font-serif text-3xl">More from GitHub</h3>
+          <ul className="mt-6 divide-y divide-line border-y border-line">
+            {moreWork.map((project) => (
+              <li key={project.id} className="grid gap-3 py-6 md:grid-cols-[1.1fr_1.6fr_auto] md:items-center md:gap-8">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.18em] text-muted">{project.kind}</p>
+                  <h4 className="mt-1 font-serif text-2xl">{project.title}</h4>
+                </div>
+                <p className="text-sm leading-relaxed text-muted">{project.summary}</p>
+                <div className="flex gap-4 text-sm">
+                  {project.live && (
+                    <a href={project.live} target="_blank" rel="noreferrer" className="underline underline-offset-4">
+                      Live
+                    </a>
+                  )}
+                  <a href={project.code} target="_blank" rel="noreferrer" className="underline underline-offset-4">
+                    Code
+                  </a>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-
-      {projects.map((project) => (
-        <div key={project.id} className='glass transform transition-transform hover:scale-105 duration-300 overflow-hidden shadow-lg h-[200px] group relative'>
-          {project.videoUrl ? (
-            <img src={project.img || 'default-image.png'} className='w-full h-full object-cover' alt={project.title} />
-          ) : (
-            <img src={project.img} className='w-full h-full object-cover' alt={project.title} />
-          )}
-          <div className='group-hover:opacity-90 opacity-0 bg-[#232323] absolute transition-opacity duration-300 inset-0 flex flex-col justify-center items-center'>
-            <span className='text-2xl font-bold text-white mb-4'>{project.title}</span>
-            <div>
-              {project.videoUrl ? (
-                <button
-                  onClick={() => handleLiveClick(project.videoUrl)}
-                  className='bg-white px-5 py-2 rounded-xl font-bold'
-                >
-                  Watch Video
-                </button>
-              ) : (
-                <button
-                  onClick={() => window.open(project.liveUrl, '_blank')}
-                  className='bg-white px-5 py-2 rounded-xl font-bold'
-                >
-                  Live
-                </button>
-              )}
-            </div>
-          </div>
-        </div>
-      ))}
-
-      {activeVideo && (
-        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-75 z-50">
-          <div className="relative">
-            <video
-              ref={videoRef}
-              src={activeVideo}
-              title="Project Video"
-              className='w-full max-w-3xl h-auto'
-              controls
-              autoPlay
-            />
-            <button
-              onClick={handleCloseVideo}
-              className='absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded'
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
-    </div>
+    </section>
   );
-}
+};
 
 export default Work;
-
-

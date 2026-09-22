@@ -1,12 +1,12 @@
-import React from 'react'
-
 const Footer = () => {
   return (
-    <div className='max-w-[1200px] p-8 flex justify-between mx-auto'>
-      <span className='text-gray-500'>Daut Vuniqi</span>
-      <p className='text-gray-500'>dautvuniqi@gmail.com<br/>#webDev2025</p>
-    </div>
-  )
-}
+    <footer className="border-t border-line">
+      <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between md:px-8">
+        <span>Daut Vuniqi</span>
+        <span>Storefronts, studios, and the systems behind them.</span>
+      </div>
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;

@@ -1,41 +1,62 @@
-import React from 'react'
-import mobilem from "../assets/mobileM.png";
-import mobile from "../assets/mobileR.png";
+const groups = [
+  {
+    title: "Interface",
+    items: ["TypeScript", "JavaScript", "React", "Next.js", "Vite", "Tailwind CSS"],
+  },
+  {
+    title: "Server & data",
+    items: ["Node.js", "Express", "Prisma", "PostgreSQL", "SQLite"],
+  },
+  {
+    title: "Shipping",
+    items: ["Git", "GitHub", "Railway"],
+  },
+];
 
 const About = () => {
   return (
-    <div className='text-white gap-4 max-w-[1200px] mx-auto my-14 grid sm:grid-cols-3' id="about">
-      <div className='sm:col-span-2 glass sm:py-16 my-auto text-left p-4'>
-        <div className='max-w-[80%] mx-auto'>
-          <h2 className='text-3xl font-bold mb-4 '>I can create your Website</h2>
-          <p className='text-gray-200'>"I'll craft your website with precision and care. Let's work together to bring your vision to life online."</p>
+    <section id="about" className="border-t border-line">
+      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[1.2fr_0.8fr] md:px-8 md:py-24">
+        <div>
+          <p className="text-xs uppercase tracking-[0.28em] text-muted">About</p>
+          <h2 className="mt-3 max-w-xl font-serif text-4xl tracking-tight sm:text-5xl md:text-6xl">Nineteen, and already shipping shops.</h2>
+          <div className="mt-8 max-w-xl space-y-4 text-lg leading-relaxed text-muted">
+            <p>
+              The last version of this site called me an 18-year-old frontend developer looking for an
+              internship. The work since then is more specific.
+            </p>
+            <p>
+              IVA Accessories and Dresses by Florinda are live stores with checkout and a studio for
+              the owner. ACCESSO.KOS is a panel for a bags business. On GitHub there are booking
+              flows, repair-shop tools, and sites written in Albanian and English.
+            </p>
+            <p>
+              I care about the part after the homepage looks finished: an order that saves, stock that
+              updates, and a person who can change a product without waiting on me.
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-8 border-t border-line pt-8 md:border-l md:border-t-0 md:pl-10 md:pt-0">
+          {groups.map((group) => (
+            <div key={group.title}>
+              <h3 className="text-xs uppercase tracking-[0.22em] text-muted">{group.title}</h3>
+              <ul className="mt-3 flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <li key={item} className="rounded-full border border-line px-3 py-1 text-sm">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          <p className="text-sm leading-relaxed text-muted">
+            Open to client sites and a first role where the job is to keep shipping real products.
+          </p>
         </div>
       </div>
+    </section>
+  );
+};
 
-      <div className='hidden md:block sm:col-span-1 glass overflow-hidden'>
-        <img className='w-[200px] md:w-[500px] abosulte' src={mobilem} />
-      </div>
-
-      <div className='hidden md:block sm:col-span-1 glass overflow-hidden'>
-        <img className='w-[200px] md:w-[500px] abosulte' src={mobile} />
-      </div>
-
-      <div className='md:hidden relative overflow-hidden h-[200px] glass'>
-        <img className='abosulte w-[400px]' src={mobilem} />
-        <img className='w-[200px] right-0 abosulte' src={mobile} />
-      </div> 
-
-      <div className='sm:col-span-2 glass sm:py-16 my-auto text-left p-4'>
-        <div className='max-w-[80%] mx-auto'>
-          <h2 className='text-3xl font-bold mb-4 '>I can optimize your website</h2>
-          <p className='text-gray-200'>
-            "I specialize in optimizing websites to ensure they perform at their best. With my expertise, I'll fine-tune your site to boost its speed, functionality, and user experience. Let's collaborate to take your online presence to the next level.</p>
-        </div>
-      </div>
-
-
-    </div>
-  )
-}
-
-export default About
+export default About;

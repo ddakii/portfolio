@@ -1,39 +1,89 @@
-import React from 'react'
-import { AiFillLinkedin, AiFillInstagram } from 'react-icons/ai'
+import { useState } from "react";
+
+const EMAIL = "dautvuniqi@gmail.com";
+
+const socials = [
+  { label: "GitHub", href: "https://github.com/ddakii" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/daut-vuniqi-264195281/" },
+  { label: "Instagram", href: "https://www.instagram.com/dakivuniqii/" },
+];
 
 const Contact = () => {
+  const [sentHint, setSentHint] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const name = String(data.get("name") || "").trim();
+    const email = String(data.get("email") || "").trim();
+    const message = String(data.get("message") || "").trim();
+
+    if (!name || !email || !message) {
+      setSentHint("Add your name, email, and a short note.");
+      return;
+    }
+
+    const subject = encodeURIComponent(`Project note from ${name}`);
+    const body = encodeURIComponent(`${message}\n\nFrom: ${name}\n${email}`);
+    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+    setSentHint("Your email app should open with the note ready to send.");
+  };
+
   return (
-    <div className='max-w-[1200px] mx-auto glass' id="contact">
-      <div className='mx-auto max-w-[600px] text-center p-6'>
-        <h2 className='text-gray-500 text-3xl md:text-5xl mb-4 font-bold'>Let's Connect</h2>
-        <p className='text-gray-500 text-xl'>and start working on amazing things</p>
-      </div>
-
-      <div className='flex justify-center'>
-
-        <div className='my-auto text-purple-900'>
-          <a href="https://www.linkedin.com/in/daut-vuniqi-264195281/"><AiFillLinkedin className='w-[100px] h-auto mb-4'/></a>
-          <a href="https://www.instagram.com/dakivuniqii/https://www.instagram.com/dakivuniqii/"><AiFillInstagram className='w-[100px] h-auto'/></a>
+    <section id="contact" className="border-t border-line">
+      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-2 md:px-8 md:py-24">
+        <div>
+          <p className="text-xs uppercase tracking-[0.28em] text-muted">Contact</p>
+          <h2 className="mt-3 font-serif text-4xl tracking-tight sm:text-5xl md:text-6xl">Tell me what the shop needs.</h2>
+          <a href={`mailto:${EMAIL}`} className="mt-6 inline-block text-lg underline decoration-wine underline-offset-4">
+            {EMAIL}
+          </a>
+          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+            {socials.map((item) => (
+              <li key={item.label}>
+                <a href={item.href} target="_blank" rel="noreferrer" className="text-muted hover:text-ink">
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        <div className='p-6 max-w-6xl'>
-           <h2 className='mb-4 text-2xl font-bold text-gray-400'>Ready to Get Started?</h2>
-           <form action='endpointFromGetformIo'method='POST'>
-            <div className='space-y-4 mb-6'>
-                <input type='text' id='name' name='name' placeholder='Your name...' className='w-full border-gray-400 py-2 px-4 border-rounded'></input>
-                <input type='email' id='email' name='email' placeholder='Your email...'className='w-full border-gray-400 py-2 px-4 border-rounded'></input>
-                <textarea type='textarea'name='message' rows='5' placeholder='Your message...'className='w-full border-gray-400 py-2 px-4 border-rounded'></textarea>
-            </div>
-            <div className='text-center'>
-               <button  type="submit" className='w-full bg-purple-700 max-w-md px-6 py-3 rounded-xl'>Send Message</button>
-            </div>
-           </form>
-        </div>
-
-
+        <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+          <label className="block text-sm">
+            Name
+            <input
+              name="name"
+              type="text"
+              autoComplete="name"
+              className="mt-1 w-full border-b border-line bg-transparent py-2 outline-none focus:border-ink"
+            />
+          </label>
+          <label className="block text-sm">
+            Email
+            <input
+              name="email"
+              type="email"
+              autoComplete="email"
+              className="mt-1 w-full border-b border-line bg-transparent py-2 outline-none focus:border-ink"
+            />
+          </label>
+          <label className="block text-sm">
+            Message
+            <textarea
+              name="message"
+              rows="5"
+              className="mt-1 w-full resize-y border-b border-line bg-transparent py-2 outline-none focus:border-ink"
+            />
+          </label>
+          <button type="submit" className="rounded-full bg-wine px-5 py-2.5 text-sm text-paper">
+            Send a note
+          </button>
+          {sentHint && <p className="text-sm text-muted">{sentHint}</p>}
+        </form>
       </div>
-    </div>
-  )
-}
+    </section>
+  );
+};
 
-export default Contact
+export default Contact;

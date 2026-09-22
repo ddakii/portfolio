@@ -1,27 +1,23 @@
-import Contact from "./components/Contact"
-import Navbar from "./components/Navbar"
-import Hero from "./components/Hero"
-import Skills from "./components/Skills"
-import Work from "./components/Work"
-import Footer from "./components/Footer"
-import About from "./components/About"
-
-
-
-
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Work from "./components/Work";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
-    <Navbar/>
-    <Hero/>
-    <Work/>
-    <Skills/>
-    <About/>
-    <Contact/>
-    <Footer/>
+      <Navbar />
+      <main>
+        <Hero />
+        <Work />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

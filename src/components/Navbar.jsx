@@ -1,49 +1,85 @@
-import React, { useState } from 'react'
-import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
-import { Link } from 'react-scroll'
+import { useState } from "react";
+import { Link } from "react-scroll";
+
+const links = [
+  { to: "work", label: "Work" },
+  { to: "about", label: "About" },
+  { to: "contact", label: "Contact" },
+];
 
 const Navbar = () => {
-  const [nav, setNav] = useState(false)
+  const [open, setOpen] = useState(false);
 
-  const handleNav = () => {
-    setNav(!nav)
-  }
+  const close = () => setOpen(false);
 
   return (
-    <div className='h-[96px] glass-nav px-8 md:backdrop:blur-xl text-gray-300 max-w-[1200px] flex justify-between items-center mx-auto'>
+    <header className="sticky top-0 z-40 border-b border-line/80 bg-paper/90 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:px-8">
+        <Link
+          to="home"
+          smooth
+          duration={500}
+          offset={-70}
+          className="cursor-pointer font-serif text-2xl tracking-tight"
+          onClick={close}
+        >
+          Daut Vuniqi
+        </Link>
 
+        <nav className="hidden items-center gap-8 text-sm md:flex">
+          {links.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              smooth
+              duration={500}
+              offset={-70}
+              className="cursor-pointer text-muted transition-colors hover:text-ink"
+            >
+              {link.label}
+            </Link>
+          ))}
+          <a
+            href="https://github.com/ddakii"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border border-ink px-4 py-1.5 text-ink transition-colors hover:bg-ink hover:text-paper"
+          >
+            GitHub
+          </a>
+        </nav>
 
-      <h1 className='text-xl font-bold'>Daut Vuniqi</h1>
-
-      <ul className='hidden md:flex gap-6 text-xl'>
-        <li><Link to="home" spy={true} smooth={true} offset={50} duration={500}>Home</Link></li>
-        <li><Link to="about" spy={true} smooth={true} offset={50} duration={500}>About</Link></li>
-        <li><Link to="work" spy={true} smooth={true} offset={50} duration={500}>Work</Link></li>
-        <li><Link to="contact" spy={true} smooth={true} offset={50} duration={500}>Contact</Link></li>
-      </ul>
-
-      <div onClick={handleNav} className='block md:hidden text-gray-300 right-10 top-10 z-50'>
-        {nav ? <AiOutlineClose size={30}/> : <AiOutlineMenu size={30}/>}
+        <button
+          type="button"
+          className="text-sm md:hidden"
+          aria-expanded={open}
+          aria-label={open ? "Close menu" : "Open menu"}
+          onClick={() => setOpen((value) => !value)}
+        >
+          {open ? "Close" : "Menu"}
+        </button>
       </div>
 
-      <div className={nav ? 'text-gray-300 z-40 absolute left-0 top-0 w-full bg-[#232323] ease-in-out duration-500' : 'fixed left-[-100%]'}>
-        <ul className='p-8 text-4xl ml-20 z-10'>
-
-          <li className='p-2'><Link to="home" spy={true} smooth={true} offset={50} duration={500}>Home</Link></li>
-          <li className='p-2'><Link to="about" spy={true} smooth={true} offset={50} duration={500}>About</Link></li>
-          <li className='p-2'><Link to="work" spy={true} smooth={true} offset={50} duration={500}>Work</Link></li>
-          <li className='p-2'><Link to="contact" spy={true} smooth={true} offset={50} duration={500}>Contact</Link></li>
-        </ul>
-      </div>
-
-
-_
-
-
-
-    </div>
-  )
-}
+      {open && (
+        <nav className="border-t border-line px-5 py-4 md:hidden">
+          <ul className="flex flex-col gap-4 text-lg">
+            {links.map((link) => (
+              <li key={link.to}>
+                <Link to={link.to} smooth duration={500} offset={-70} onClick={close} className="cursor-pointer">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <a href="https://github.com/ddakii" target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+            </li>
+          </ul>
+        </nav>
+      )}
+    </header>
+  );
+};
 
 export default Navbar;
-
