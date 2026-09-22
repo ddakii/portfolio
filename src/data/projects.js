@@ -75,6 +75,7 @@ export const moreWork = [
     kind: "Auto service",
     summary: "Client and API for an auto service business, set up to run as one app.",
     stack: ["React", "Node", "TypeScript"],
+    live: "https://autoendriti.netlify.app",
     code: "https://github.com/ddakii/autoendriti",
   },
   {
@@ -91,6 +92,7 @@ export const moreWork = [
     kind: "Restaurant",
     summary: "Informational site for a wood-fired pizza restaurant.",
     stack: ["React", "Vite", "Tailwind"],
+    live: "https://fornopizzashop.netlify.app",
     code: "https://github.com/ddakii/pizzashop",
   },
   {

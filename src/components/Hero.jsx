@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section id="home" className="mx-auto grid w-full min-w-0 max-w-6xl items-end gap-10 px-5 pb-16 pt-12 md:grid-cols-[1.4fr_0.8fr] md:px-8 md:pb-24 md:pt-20">
       <div className="min-w-0">
-        <p className="mb-6 text-xs uppercase tracking-[0.28em] text-muted">Web developer · 19</p>
+        <p className="mb-6 text-xs uppercase tracking-[0.28em] text-muted">Web developer</p>
         <h1 className="max-w-full font-serif text-[2.15rem] leading-[0.95] tracking-tight min-[420px]:text-4xl sm:text-6xl md:text-7xl lg:text-8xl">
           <span className="block">Shops, studios,</span>
           <span className="block italic text-wine">and the tools</span>
@@ -36,7 +36,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <figure className="w-full min-w-0 max-w-full overflow-hidden md:max-w-sm md:justify-self-end">
+      <figure className="w-full min-w-0 max-w-[240px] overflow-hidden md:max-w-[220px] md:justify-self-end">
         <img
           src="/portrait.png"
           alt="Daut Vuniqi wearing a graduation cap and glasses"

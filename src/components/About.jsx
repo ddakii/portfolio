@@ -19,7 +19,7 @@ const About = () => {
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-[1.2fr_0.8fr] md:px-8 md:py-24">
         <div>
           <p className="text-xs uppercase tracking-[0.28em] text-muted">About</p>
-          <h2 className="mt-3 max-w-xl font-serif text-4xl tracking-tight sm:text-5xl md:text-6xl">Nineteen, and already shipping shops.</h2>
+          <h2 className="mt-3 max-w-xl font-serif text-4xl tracking-tight sm:text-5xl md:text-6xl">Building shops that work from day one.</h2>
           <div className="mt-8 max-w-xl space-y-4 text-lg leading-relaxed text-muted">
             <p>
               The last version of this site called me an 18-year-old frontend developer looking for an
