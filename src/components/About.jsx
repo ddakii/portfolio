@@ -28,7 +28,7 @@ const About = () => {
               My work spans e-commerce, booking systems, restaurant sites, and business management tools — most built in both Albanian and English. Every project ships with the backend, database, and admin side included.
             </p>
             <p>
-              I'm not here to build pretty demos. I build things that take orders, track inventory, and let business owners run their shop without calling a developer.
+              I’m not here to build pretty demos. I build things that take orders, track inventory, and let business owners run their shop without calling a developer.
             </p>
           </div>
         </div>
