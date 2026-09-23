@@ -1,28 +1,5 @@
 import { featured, moreWork } from "../data/projects";
 
-const Links = ({ project, light }) => (
-  <div className="mt-6 flex flex-wrap gap-3 text-sm">
-    {project.live && (
-      <a
-        href={project.live}
-        target="_blank"
-        rel="noreferrer"
-        className={`rounded-full px-4 py-2 ${light ? "bg-paper text-ink" : "bg-ink text-paper"}`}
-      >
-        Live site
-      </a>
-    )}
-    <a
-      href={project.code}
-      target="_blank"
-      rel="noreferrer"
-      className={`rounded-full border px-4 py-2 ${light ? "border-paper/40" : "border-line"}`}
-    >
-      GitHub
-    </a>
-  </div>
-);
-
 const Work = () => {
   return (
     <section id="work" className="border-t border-line">
@@ -44,7 +21,11 @@ const Work = () => {
 
         <div className="grid gap-4 lg:grid-cols-3">
           {featured.map((project, index) => (
-            <article key={project.id} className={`tone-${project.tone} flex min-h-[420px] min-w-0 flex-col justify-between overflow-hidden rounded-3xl p-6 md:p-7`}>
+            <article
+              key={project.id}
+              className={`tone-${project.tone} card-in flex min-h-[420px] min-w-0 flex-col justify-between overflow-hidden rounded-3xl p-6 transition duration-300 hover:-translate-y-1 md:p-7`}
+              style={{ animationDelay: `${index * 90}ms` }}
+            >
               <div>
                 <div className="flex items-center justify-between text-xs uppercase tracking-[0.2em] opacity-70">
                   <span>0{index + 1}</span>
@@ -55,7 +36,16 @@ const Work = () => {
               </div>
               <div>
                 <p className="mt-6 text-xs uppercase tracking-[0.14em] opacity-80">{project.stack.join(" · ")}</p>
-                <Links project={project} light />
+                <div className="mt-6 flex flex-wrap gap-3 text-sm">
+                  {project.live && (
+                    <a href={project.live} target="_blank" rel="noreferrer" className="rounded-full bg-paper px-4 py-2 text-ink">
+                      Live site
+                    </a>
+                  )}
+                  <a href={project.code} target="_blank" rel="noreferrer" className="rounded-full border border-paper/40 px-4 py-2">
+                    GitHub
+                  </a>
+                </div>
               </div>
             </article>
           ))}
