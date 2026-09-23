@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section id="home" className="mx-auto grid w-full min-w-0 max-w-6xl items-end gap-10 px-5 pb-16 pt-12 md:grid-cols-[1.4fr_0.8fr] md:px-8 md:pb-24 md:pt-20">
       <div className="min-w-0">
-        <p className="mb-6 text-xs uppercase tracking-[0.28em] text-muted">Web developer · 19</p>
+        <p className="mb-6 text-xs uppercase tracking-[0.28em] text-muted">Web developer</p>
         <h1 className="max-w-full font-serif text-[2.15rem] leading-[0.95] tracking-tight min-[420px]:text-4xl sm:text-6xl md:text-7xl lg:text-8xl">
           <span className="block">Shops, studios,</span>
           <span className="block italic text-wine">and the tools</span>
@@ -36,13 +36,15 @@ const Hero = () => {
         </div>
       </div>
 
-      <figure className="w-full min-w-0 max-w-full overflow-hidden md:max-w-sm md:justify-self-end">
-        <img
-          src="/portrait.png"
-          alt="Daut Vuniqi wearing a graduation cap and glasses"
-          className="block aspect-[4/5] w-full max-w-full object-cover object-top grayscale"
-        />
-        <figcaption className="mt-3 flex items-center justify-between text-xs uppercase tracking-[0.18em] text-muted">
+      <figure className="relative w-full min-w-0 max-w-[280px] md:max-w-xs md:justify-self-end">
+        <div className="overflow-hidden rounded-2xl bg-ink/5 p-3 shadow-lg shadow-ink/10">
+          <img
+            src="/portrait.png"
+            alt="Daut Vuniqi wearing a graduation cap and glasses"
+            className="block aspect-[4/5] w-full rounded-xl object-cover object-top grayscale transition-all duration-300 hover:grayscale-0"
+          />
+        </div>
+        <figcaption className="mt-4 flex items-center justify-between text-xs uppercase tracking-[0.18em] text-muted">
           <span>Daut Vuniqi</span>
           <span>2026</span>
         </figcaption>
