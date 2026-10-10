@@ -6,7 +6,7 @@ export const featured = [
     summary:
       "A live shop for bags, sunglasses, and wallets. Customers check out with cash on delivery, track an order by phone, and the studio admin handles products, stock, and order status.",
     stack: ["React", "TypeScript", "Express", "Prisma", "PostgreSQL"],
-    live: "ivaaccessories.netlify.app",
+    live: "https://ivaaccessories.netlify.app",
     code: "https://github.com/ddakii/ivaaccessories",
     tone: "olive",
   },
