@@ -17,7 +17,7 @@ export const featured = [
     summary:
       "Luxury dress storefront in English and Albanian, with guest checkout, a wishlist, and a studio admin for the collection.",
     stack: ["React", "TypeScript", "Express", "Prisma", "Tailwind"],
-    live: "https://dressesbyflorinda.up.railway.app",
+    live: "https://dressesbyflorinda.netlify.app/",
     code: "https://github.com/ddakii/dressesbyflorinda",
     tone: "wine",
   },
