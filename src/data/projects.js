@@ -22,14 +22,14 @@ export const featured = [
     tone: "wine",
   },
   {
-    id: "accesso",
-    title: "ACCESSO.KOS",
-    kind: "Business panel",
+    id: "euroing",
+    title: "EUROING",
+    kind: "Workforce Management System",
     summary:
-      "A working panel for the ACCESSO.KOS bags and accessories business, built so the shop can be run from one place.",
-    stack: ["Vite", "Prisma", "PostgreSQL"],
-    live: "https://accessokos-production.up.railway.app",
-    code: "https://github.com/ddakii/accesso.kos",
+      "Albanian-language platform for a construction company: staff, payroll, attendance, leave, inventory, vehicles, and reports.",
+    stack: ["Next.js", "Prisma", "PostgreSQL"],
+    live: "https://euroing.vercel.app/",
+    code: "https://github.com/ddakii/euroing",
     tone: "ink",
   },
   {
@@ -66,15 +66,7 @@ export const moreWork = [
     live: "https://web-production-4bc23.up.railway.app",
     code: "https://github.com/ddakii/Tires-More-For-Less",
   },
-  {
-    id: "euroing",
-    title: "EUROING",
-    kind: "Internal tool",
-    summary:
-      "Albanian-language platform for a construction company: staff, payroll, attendance, leave, inventory, vehicles, and reports.",
-    stack: ["Next.js", "Prisma", "PostgreSQL"],
-    code: "https://github.com/ddakii/euroing",
-  },
+
   {
     id: "revive",
     title: "Revive Auto Detail",
